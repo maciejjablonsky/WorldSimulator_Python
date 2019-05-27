@@ -1,5 +1,5 @@
 from organisms.animals.human import Human
-
+from species import species_dictionary
 
 class World:
     def __init__(self, width, height, commentator):
@@ -68,4 +68,5 @@ class World:
         places_to_breed = local_parent.where_to_move
         places_to_breed.extend(invading_parent.where_to_move)
         self.organisms.append(new_animal)
-        self.commentator.say(new_animal + " was born!")
+        self.commentator.say(
+            "[{0:s}] {1:s} was born!".format(species_dictionary[new_animal.species]["prompt"], new_animal.species))
