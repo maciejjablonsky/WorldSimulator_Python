@@ -1,3 +1,6 @@
+from organisms.animals.human import Human
+
+
 class World:
     def __init__(self, width, height, commentator):
         self.width = width
@@ -66,4 +69,3 @@ class World:
         places_to_breed.extend(invading_parent.where_to_move)
         self.organisms.append(new_animal)
         self.commentator.say(new_animal + " was born!")
-
