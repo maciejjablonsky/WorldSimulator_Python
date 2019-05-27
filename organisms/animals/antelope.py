@@ -5,7 +5,7 @@ from random import uniform, randrange
 class Antelope(Animal):
     escape_chance = 0.5
 
-    def __init__(self, world, strength=4, initiative=4, species="sheep"):
+    def __init__(self, world, strength=4, initiative=4, species="antelope"):
         super(Animal, self).__init__(world, strength, initiative, species)
 
     def collision(self, attacker):
