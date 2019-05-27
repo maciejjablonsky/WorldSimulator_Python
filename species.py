@@ -1,0 +1,5 @@
+species = {
+    "wolf":{
+        "class": "Wolf"
+    }
+}
