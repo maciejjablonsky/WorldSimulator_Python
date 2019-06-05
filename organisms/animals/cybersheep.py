@@ -1,4 +1,5 @@
 from organisms.animals.sheep import Sheep
+from organisms.plants.sosnowski import Sosnowskihogweed
 from point import Point
 
 
@@ -10,10 +11,9 @@ class Cybersheep(Sheep):
     def nearest_sosnowski(self):
         attacker = self
         min = 0
-        distance = 0
         nearest_sosnowski = None
         for organism in self.world.organisms:
-            if isinstance(organism, SosnowskiHogweed):
+            if isinstance(organism, Sosnowskihogweed):
                 distance = attacker.distance_to(organism)
                 if nearest_sosnowski is None:
                     nearest_sosnowski = organism
@@ -27,7 +27,7 @@ class Cybersheep(Sheep):
         attacker = self
         nearest_sosnowski = self.nearest_sosnowski
         self.world.commentator.say(attacker + " is going to eat the nearest " + nearest_sosnowski)
-        place_to_move = Point(self.position)
+        place_to_move = Point(point=self.position)
         if nearest_sosnowski is not None:
             if attacker.position.greater_distance_is_in_x(nearest_sosnowski.position):
                 if nearest_sosnowski.position.x > attacker.position.x:

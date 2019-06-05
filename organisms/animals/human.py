@@ -10,7 +10,7 @@ class Human(Animal):
         super(Animal, self).__init__(world, strength, initiative, species)
         self._strength_bonus = 0
         self._round_counter = 0
-        self._next_position = Point(0, 0)
+        self._next_position = Point(x=0, y=0)
 
     @property
     def strength(self):

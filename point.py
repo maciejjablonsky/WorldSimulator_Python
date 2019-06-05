@@ -2,9 +2,14 @@ from random import randrange
 
 
 class Point:
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
+    def __init__(self, *args, **kwargs):
+        if "point" in kwargs:
+            point = kwargs["point"]
+            self.x = point.x
+            self.y = point.y
+        elif "x" in kwargs and "y" in kwargs:
+            self.x = kwargs["x"]
+            self.y = kwargs["y"]
 
     @property
     def x(self):
@@ -25,9 +30,14 @@ class Point:
     def distance_to(self, point):
         return abs(point.x - self.x) + abs(point.y - self.y)
 
-    def set(self, point):
-        self.x = point.x
-        self.y = point.y
+    def set(self, *args, **kwargs):
+        if "point" in kwargs:
+            point = kwargs["point"]
+            self.x = point.x
+            self.y = point.y
+        elif "x" in kwargs and "y" in kwargs:
+            self.x = kwargs["x"]
+            self.y = kwargs["y"]
 
     def __eq__(self, point):
         return point.x == self.x and point.y == self.y

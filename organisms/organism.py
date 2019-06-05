@@ -1,4 +1,5 @@
 import time
+
 from point import Point
 
 
@@ -14,7 +15,7 @@ class Organism:
         self._destination = None
 
         for i in range(0, world.width * world.height):
-            place = Point(0, 0).randomize(world.width, world.height)
+            place = Point(x=0, y=0).randomize(world.width, world.height)
             if world.empty_place(place):
                 self.position = place
                 self.destination = place
